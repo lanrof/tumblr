@@ -13,9 +13,8 @@
     x:Name="parent"
     d:DesignHeight="200" d:DesignWidth="200">
     
-    <Grid DataContext="{Binding ElementName=parent}" x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}"
-          Visibility="{Binding IsPostVisibile, Converter={StaticResource booleanToVisibilityConverter}}">
-        <StackPanel>
+    <Grid DataContext="{Binding ElementName=parent}" x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
+        <StackPanel Margin="0,0,0,20">
             <TextBlock Text="{Binding PostTypeLabel}" TextWrapping="Wrap" TextTrimming="WordEllipsis" HorizontalAlignment="Right" 
                        Margin="5,5,5,5" FontSize="20"/>
             <StackPanel Margin="10,10,10,10" Visibility="{Binding IsRegularPostVisible, Converter={StaticResource booleanToVisibilityConverter}}">
@@ -37,10 +36,7 @@
             <StackPanel Margin="10,10,10,10" Visibility="{Binding IsVideoPostVisible, Converter={StaticResource booleanToVisibilityConverter}}">
                 <TextBlock Text="{Binding VideoCaption}" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0,0,0,20"/>
                 <HyperlinkButton Content="Link to source" cal:Message.Attach="[Event Tap] = [Action OpenVideoLink]" />
-                <wp:WebBrowser x:Name="WebBrowserControl" HorizontalAlignment="Stretch" 
-                               VerticalAlignment="Stretch" Source="http://www.google.pl" Tag="load"
-                               cal:Message.Attach="[Event LoadCompleted]=[Action LoadCompleted($source,$eventArgs)]"/>
-                <!--wp:WebBrowser HorizontalAlignment="Stretch" Margin="10,10,10,0" Name="webBrowser1" VerticalAlignment="Stretch" 
+                <!--wp:WebBrowser HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Stretch" 
                                Source="http://www.google.pl" 
                                cal:Message.Attach="[Event Loaded] = [Action LoadWebBrowserWithVideo($source)]"/-->
             </StackPanel>
@@ -54,9 +50,9 @@
                 <TextBlock Text="{Binding ConversationText}" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0,0,0,20"/>
                 <!-- zamiast plaintextu zrobić binding kolekcji, obiekty na przemian z wyrównaniem- prawa / lewa -->
             </StackPanel>
-            <TextBlock Text="{Binding TagLabel}" TextWrapping="Wrap" TextTrimming="WordEllipsis" 
-                       HorizontalAlignment="Left" Margin="5,25,5,5" VerticalAlignment="Bottom"
-                       FontSize="16"/>
         </StackPanel>
+        <TextBlock Text="{Binding TagLabel}" TextWrapping="Wrap" TextTrimming="WordEllipsis" 
+                       HorizontalAlignment="Left" Margin="5,35,5,5" VerticalAlignment="Bottom"
+                       FontSize="16"/>
     </Grid>
 </UserControl>

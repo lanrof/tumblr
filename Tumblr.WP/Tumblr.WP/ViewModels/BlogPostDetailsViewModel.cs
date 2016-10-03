@@ -8,7 +8,7 @@ namespace Tumblr.WP.ViewModels
     public class BlogPostDetailsViewModel : PropertyChangedBase
     {
         #region fields
-        private readonly INavigationService navigationService;
+        private readonly INavigationService _navigationService;
         private Post _post;        
         private String _postAsJson;
         #endregion
@@ -29,18 +29,18 @@ namespace Tumblr.WP.ViewModels
         }
         public String PostAsJson
         {
+            get { return _postAsJson; }
             set
             {
                 _postAsJson = value;
                 Post = JsonConvert.DeserializeObject<Post>(_postAsJson);
-            }
-            get { return _postAsJson; }
+            }            
         }
         #endregion
 
         public BlogPostDetailsViewModel(INavigationService navigationService)
         {
-            this.navigationService = navigationService;
+            _navigationService = navigationService;
         }
     }
 }

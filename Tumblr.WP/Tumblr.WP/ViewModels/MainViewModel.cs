@@ -44,6 +44,7 @@ namespace Tumblr.WP.ViewModels {
             ReadBlogNameFromSettings();
         }
 
+        #region methods
         public void OnTextBoxTextChanged(object sender)
         {
             TextBox textBox = sender as TextBox;
@@ -65,5 +66,6 @@ namespace Tumblr.WP.ViewModels {
                 BlogName = IsolatedStorageSettings.ApplicationSettings["blogName"] as string;
             }
         }
+        #endregion
     }
 }

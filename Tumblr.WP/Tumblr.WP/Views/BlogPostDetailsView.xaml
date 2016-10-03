@@ -29,7 +29,9 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <ScrollViewer>
-                <local:SinglePostUserControl Post="{Binding Post}"/>
+                <Grid>
+                    <local:SinglePostUserControl Post="{Binding Post}"/>
+                </Grid>
             </ScrollViewer>
         </Grid>
     </Grid>

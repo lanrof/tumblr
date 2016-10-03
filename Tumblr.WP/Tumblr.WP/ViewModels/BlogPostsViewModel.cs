@@ -62,7 +62,6 @@ namespace Tumblr.WP.ViewModels
         #region methods
         private void DownloadNextPosts(int count = 20, int startIndex = 0)
         {
-            var blogName = "discoverynews";
             var url = "http://" + _blogName + ".tumblr.com/";
             var client = new RestClient(url);
             var request = new RestRequest("api/read/json", Method.GET);

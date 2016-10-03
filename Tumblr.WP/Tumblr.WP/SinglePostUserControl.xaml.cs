@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Phone.Controls;
 using Tumblr.Model;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
-using System.Windows.Navigation;
 
 namespace Tumblr.WP
 {
@@ -522,23 +520,12 @@ namespace Tumblr.WP
         private void ShowInBrowser(string url)
         {
             Microsoft.Phone.Tasks.WebBrowserTask wbt = new Microsoft.Phone.Tasks.WebBrowserTask();
-            wbt.Uri = new Uri(url);
-            wbt.Show();
-        }
-
-        public void LoadWebBrowserWithVideo(object webBrowser, RoutedEventArgs e)
-        {
-            var wb = (webBrowser as WebBrowser);
-            wb.NavigateToString(VideoIFramePlayer);
-        }
-
-        public void LoadCompleted(object sender, NavigationEventArgs e)
-        {
-            WebBrowser x = (WebBrowser)sender;
-            if (VideoIFramePlayer == null || (string)x.Tag == "no") return;
-            x.Tag = "no";
-            x.NavigateToString(VideoIFramePlayer); 
-            //var document = x.Document as mshtml.HTMLDocument;
+            try
+            {
+                wbt.Uri = new Uri(url);
+                wbt.Show();
+            }
+            catch { }
         }
         #endregion
     }

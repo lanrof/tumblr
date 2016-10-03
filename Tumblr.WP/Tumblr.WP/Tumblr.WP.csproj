@@ -160,6 +160,7 @@
     <Content Include="Assets\Icons\back.png" />
     <Content Include="Assets\Icons\check.png" />
     <Content Include="Assets\Icons\next.png" />
+    <Content Include="Assets\Icons\Tumblr.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

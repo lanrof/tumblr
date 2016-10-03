@@ -23,15 +23,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-
-        <StackPanel Grid.Row="0" Margin="10,50,10,10">
-            
-            <TextBlock Text="Tumblr" Margin="50" Style="{StaticResource PhoneTextTitle1Style}" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="0" Margin="10,0,10,10">
+            <Image Source="../Assets/Icons/appbar.social.tumblr.png" Height="80" 
+                   HorizontalAlignment="Right" Margin="0,0,20,0"/>
+            <TextBlock Text="Tumblr" Margin="50" Style="{StaticResource PhoneTextTitle1Style}" 
+                       HorizontalAlignment="Center"/>
             <TextBlock Text="Please enter the blog name" Margin="20,50,10,10"/>
             <TextBox Text="{Binding BlogName, Mode=TwoWay, UpdateSourceTrigger=Explicit}" 
                      cal:Message.Attach="[Event TextChanged] = [Action OnTextBoxTextChanged($source)]" />
         </StackPanel>
-        
+
         <bab:BindableAppBar x:Name="AppBar">
             <bab:BindableAppBarButton
                 Text="Continue"
@@ -39,7 +40,6 @@
                 IsEnabled="{Binding CanAccept}"
                 cal:Message.Attach="[Event Click] = [Action Accept]"/>
         </bab:BindableAppBar>
-
     </Grid>
 
 </phone:PhoneApplicationPage>

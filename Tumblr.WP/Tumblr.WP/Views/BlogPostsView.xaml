@@ -41,12 +41,9 @@
                     <DataTemplate>
                         <StackPanel Margin="10,10,10,20">
                             <local:SinglePostUserControl Post="{Binding}"/>
-                            <!--Button Content="Show details" 
-                                    cal:Message.Attach="[Event Tap] = [Action OnSelectionChanged($source)]"/-->
                         </StackPanel>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
-
             </phone:LongListSelector>
         </Grid>
     </Grid>
