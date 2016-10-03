@@ -30,12 +30,12 @@
                 <TextBlock Text="{Binding QuoteSource}" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="30,10,0,0"/>
             </StackPanel>
             <StackPanel Margin="10,10,10,10" Visibility="{Binding IsLinkPostVisible, Converter={StaticResource booleanToVisibilityConverter}}">
-                <TextBlock Text="{Binding LinkTitle}" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0,0,0,40"/>
-                <HyperlinkButton Content="Link" cal:Message.Attach="[Event Tap] = [Action OpenLink]" />
+                <TextBlock Text="{Binding LinkTitle}" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0,0,0,30"/>
+                <HyperlinkButton Content="Link" cal:Message.Attach="[Event Tap] = [Action OpenLink]" Margin="0,0,0,30"/>
             </StackPanel>
             <StackPanel Margin="10,10,10,10" Visibility="{Binding IsVideoPostVisible, Converter={StaticResource booleanToVisibilityConverter}}">
-                <TextBlock Text="{Binding VideoCaption}" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0,0,0,20"/>
-                <HyperlinkButton Content="Link to source" cal:Message.Attach="[Event Tap] = [Action OpenVideoLink]" />
+                <TextBlock Text="{Binding VideoCaption}" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0,0,0,30"/>
+                <HyperlinkButton Content="Link" cal:Message.Attach="[Event Tap] = [Action OpenVideoLink]" Margin="0,0,0,30" />
                 <!--wp:WebBrowser HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Stretch" 
                                Source="http://www.google.pl" 
                                cal:Message.Attach="[Event Loaded] = [Action LoadWebBrowserWithVideo($source)]"/-->
@@ -52,7 +52,7 @@
             </StackPanel>
         </StackPanel>
         <TextBlock Text="{Binding TagLabel}" TextWrapping="Wrap" TextTrimming="WordEllipsis" 
-                       HorizontalAlignment="Left" Margin="5,35,5,5" VerticalAlignment="Bottom"
+                       HorizontalAlignment="Left" Margin="5,5,5,5" VerticalAlignment="Bottom"
                        FontSize="16"/>
     </Grid>
 </UserControl>
